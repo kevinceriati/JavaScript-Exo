@@ -6,5 +6,34 @@
     <body>
         <h1>Exercice 2</h1>
         <script src="script.js"></script>
+
+        <script>
+
+        var inscrit = false;
+        var age = 5;
+        var raceNumber 
+
+        if (inscrit != true){
+            raceNumber = Math.floor(Math.random()*1000);
+            console.log(raceNumber);
+        }
+
+        if ( age > 18 && inscrit === true){
+            console.log('You will race at 9:30 am');
+        }
+
+        if (inscrit === true || age > 18){
+            console.log('You will race at 11:00 am ');
+        }
+
+        if (age < 18 || inscrit === false){
+            console.log('You will race at 12:30 pm ');
+
+        }else{
+            console.log('Go to see the registration desk')
+        }
+
+
+        </script>
     </body>
 </html>
