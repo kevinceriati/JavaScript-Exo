@@ -35,6 +35,8 @@ Décommenter la ligne puis recharger la page.
 
 Que se passe-t-il et pourquoi ?
 
+-> La console affiche un message d'erreur car la variable "myVariable" n'existe pas et elle n'est pas définit.
+
 # Exo-1 - Les variables
 
 La température aujourd'hui est de 294 Kelvin.
