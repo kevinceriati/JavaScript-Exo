@@ -6,5 +6,17 @@
     <body>
         <h1>Exercice 1</h1>
         <script src="script.js"></script>
+
+        <script>
+        
+        var kelvin = prompt('Quelle est la température en Kelvin aujourd\'hui ?');
+        //const kelvin = 294;
+        const celsius = kelvin - 273;   // Ici on définit que la variable celsius est égal à la variable Kelvin - 273°
+        const fahrenheit = Math.floor(celsius * (9/5) + 32);   // Ici on définit que la variable fahrenheit est égal l'équation précédente qui prend en paramètre
+                                                              // On place la fonction native Math.floor devant le résultat afin de renvoyer un entier.
+        
+        console.log(kelvin, celsius, fahrenheit);
+        </script>
+
     </body>
 </html>
