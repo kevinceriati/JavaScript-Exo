@@ -1,10 +1,62 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-    </head>
-    <body>
-        <h1>Exercice 4</h1>
-        <script src="script.js"></script>
-    </body>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <h1>Exercice 4</h1>
+    <script src="script.js"></script>
+
+    <script>
+
+        var secretMessage = ["Learning", "isn't", "about", "what", "you", "get", "easily", "the", "first", "time,", "it's", "about", "what", "you", "can", "figure", "out.", "-2015,", "Chris", "Pine,", "Learn", "JavaScript"];
+
+function deleteLast () {
+    secretMessage.pop(); 
+}
+
+function addItem (){
+    secretMessage.push('to', 'program');
+}
+
+function switchItem (){
+
+    var pos = secretMessage.indexOf('easily');
+
+    secretMessage.splice(pos, 1, 'right');
+
+     console.log(secretMessage);
+}
+
+function deleteFirst(){
+    secretMessage.shift();
+}
+
+function addItemFront(){
+    secretMessage.unshift('Programming');
+}
+
+function replace(){
+
+    var pos = secretMessage.indexOf('get');
+    secretMessage.splice(pos, 5, 'know');
+}
+
+
+deleteLast ();
+addItem ();
+switchItem();
+deleteFirst();
+addItemFront();
+replace();
+
+console.log(secretMessage.join(' '));
+
+//console.log(secretMessage);
+
+    </script>
+</body>
+
 </html>
