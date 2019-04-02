@@ -6,5 +6,40 @@
     <body>
         <h1>Exercice 5</h1>
         <script src="exo5.js"></script>
+
+        <script>
+        
+        var input = prompt( ' Tappe ton texte à traduire en baleine ');
+
+        var voyelles = ["a", "e", "i", "o", "u", "y"];
+
+        var resultArray = [];
+
+        var inputSplit = input.split('');
+        //console.log(inputSplit);
+
+
+        // inputSplit.forEach(function(lettreRandom){
+        //     //console.log(lettreRandom);
+
+        //     voyelles.forEach(function(voyelle){
+        //         if (lettreRandom === voyelle){
+        //             resultArray.push(lettreRandom);
+        //         }
+        //     });
+  
+        // });
+
+inputSplit.forEach(function(lettreRandom){
+    if(voyelles.indexOf(lettreRandom) != -1){
+        resultArray.push(lettreRandom);
+    }
+
+});
+
+        console.log(resultArray.join('').toUpperCase());
+        
+        
+        </script>
     </body>
 </html>
