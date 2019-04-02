@@ -1,10 +1,110 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-    </head>
-    <body>
-        <h1>Exercice 3</h1>
-        <script src="exo3.js"></script>
-    </body>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <h1>Exercice 3</h1>
+    <script src="exo3.js"></script>
+
+    <script>
+
+        function getUserChoice(userInput) {
+            let newUserInput = userInput.toLowerCase();
+            console.log('User choose :');
+
+            switch (newUserInput) {
+                case 'rock':
+                    console.log('rock');
+                    break;
+
+                case 'paper':
+                    console.log('paper');
+                    break;
+
+                case 'scissors':
+                    console.log('scissors');
+                    break;
+
+                case 'bomb':
+                    console.log('bomb');
+                    break;
+
+                default:
+                    console.log('erreur')
+
+            }
+
+            return newUserInput;
+        }
+
+        function getComputerChoice() {
+
+            let computerChoice = Math.floor(Math.random()*3);
+            console.log('computer choose :');
+            switch (computerChoice) {
+                case 0:
+                    console.log('rock');
+                    computerChoice = 'rock';          
+                    break;
+
+                case 1:
+                    console.log('paper');
+                    computerChoice = 'paper';
+                    break;
+
+                case 2:
+                    console.log('scissors');
+                    computerChoice = 'scissors';
+                    break;
+            }
+
+            return computerChoice;
+        }
+
+        function determineWinner(userChoice, computerChoice) {
+
+            if (userChoice === computerChoice) {
+                console.log('Tied');
+            }
+
+            else if (userChoice === 'bomb') {
+                console.log('Tu as gagné, cheater');
+            }
+
+            else if (userChoice === 'rock' && computerChoice === 'scissors') {
+                console.log('won');
+            }
+
+            else if (userChoice === 'paper' && computerChoice === 'rock') {
+                console.log('won');
+            }
+
+            else if (userChoice === 'scissors' && computerChoice === 'paper') {
+                console.log('won');
+            }
+
+            else {
+                console.log('Lost');
+            }
+        }
+
+
+        function playGame() {
+
+            var userInput = prompt('rock, paper, scissors, make your choice');
+
+            let uChoice = getUserChoice(userInput);
+            let computerChoice = getComputerChoice();
+
+            console.log(determineWinner(uChoice, computerChoice));
+        }
+
+        playGame();
+
+    </script>
+</body>
+
 </html>
