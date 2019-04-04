@@ -55,3 +55,11 @@ var jsonDatas=[
 		"quantity" : 200
 	}
 ]
+
+var typeProduct = {
+    "car" : "voiture",
+    "house" : "maison",
+    "game" : "jeux",
+    "videoGame" : "jeuxVideo",
+    "show" : "spectacle",
+}

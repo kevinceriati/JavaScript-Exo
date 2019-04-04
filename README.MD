@@ -263,7 +263,7 @@ Voici quelques idées afin de mettre en pratique ce que vous avez appris dans un
 9. Afficher tous les contacts.
 
 10. Faites fonctionner votre page avec cette nouvelle structure.
-
+  
 # Exo-7-bonus : Aller vraiment plus loin
 
 Faire les exercices en console c'est bien, mais il est plus intéressant d'utiliser la page web fournie.
