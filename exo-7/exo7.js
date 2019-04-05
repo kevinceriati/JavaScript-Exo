@@ -1,18 +1,19 @@
 console.log("exo-7");
 
-console.log(jsonDatas);
+//console.log(jsonDatas);
 
 var requestType = [];
+var contact = [];
 
 
 function traduction() {
 
-    jsonDatas.forEach(function (objet) {       //   Fonction qui parcout json.data et qui à chaque tour de boucle rentre les données dans "objet' avec la fonction(objet). 
-        for (var propriete in typeProduct) {  //   Ensuite on parcours typeProduct et on créer pour chaque type une clef nommée "propriete".
-            if (propriete === objet.type) {   //   On vérifie que la valeur de la clef propriete est égal à la valeur de l'objet "objet.type".
-                objet.typeTraduct = typeProduct[propriete];   //   Si oui, on remplace sa valeur par celle correspondante du "typeProduct".
+    jsonDatas.forEach(function (categorie) {                                                         //   Fonction qui parcout json.data et qui à chaque tour de boucle rentre les données dans "objet' avec la fonction(objet). 
+        for (var propriete in typeProduct) {                  //   Ensuite on parcours typeProduct et on créer pour chaque type une clef nommée "propriete".
+            if (propriete === categorie.type) {                   //   On vérifie que la valeur de la clef propriete est égal à la valeur de l'objet "objet.type".
+                categorie.typeTraduct = typeProduct[propriete];   //   Si oui, on remplace sa valeur par celle correspondante du "typeProduct".
             }
-        }
+        } 
     });
 }
 
@@ -24,15 +25,18 @@ function searching() {
     var objOnStock = document.getElementById('checkInput').checked;
 
     jsonDatas.forEach(function (item) {
+        item.items.forEach(function(genre){
+
         if ((objSearching === item.type || objSearching === item.typeTraduct) && objOnStock === true) {
-            requestType.push(item);
+            requestType.push(genre);
         }
 
-        else if ((objSearching === item.type || objSearching === item.typeTraduct) && objOnStock === false && item.quantity > 0) {
-            requestType.push(item);
+        else if ((objSearching === item.type || objSearching === item.typeTraduct) && objOnStock === false && genre.quantity > 0) {
+            requestType.push(genre);
         }
+    })
     });
-
+console.log(requestType);
     sortBy(requestType);
 }
 
@@ -43,7 +47,6 @@ function sortBy(requestType) {
     if (sortRequest === '1') {
         requestType.sort(function (a, b) {
             return (a.name).localeCompare(b.name);
-
         });
     } else if (sortRequest === '2') {
         requestType.sort(function (a, b) {
@@ -58,7 +61,7 @@ function sortBy(requestType) {
             return (b.price)-(a.price);
         });
     }
-    console.log(requestType)
+    //console.log(requestType)
 }
 
 
@@ -72,15 +75,21 @@ function addObj () {
      newItem.price = document.getElementById('addPriceInput').value;;
      newItem.quantity = document.getElementById('addQuantityInput').value;   
 
-     jsonDatas.push(newItem);
-  
+     jsonDatas.push(newItem);  
      console.log(jsonDatas);
 } 
 
-  
-   //...push
+
+function showContact(){
+
+   jsonDatas.forEach(function(categorie){
+       categorie.items.forEach(function(item){
+        console.log(item.contact);
+       })
+   })
+
+}
 
 
-
-
-console.log(traduction());
+//console.log(traduction());
+//showContact();

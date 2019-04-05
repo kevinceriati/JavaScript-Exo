@@ -258,7 +258,7 @@ Voici quelques idées afin de mettre en pratique ce que vous avez appris dans un
 
 7. Ajouter un formulaire simple permettant d'ajouter un objet à la liste d'objets.
 
-8. Modifier la structure de données (data.js) afin d'avoir une structure de données comme décrit dans le fichier datas2.js (remonter le type d'un niceau et ajouter un contact à l'objet)
+8. Modifier la structure de données (data.js) afin d'avoir une structure de données comme décrit dans le fichier datas2.js (remonter le type d'un niveau et ajouter un contact à l'objet)
 
 9. Afficher tous les contacts.
 
