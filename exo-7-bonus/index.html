@@ -1,44 +1,122 @@
 <!doctype html>
-<html  lang="fr">
-    <head>
-        <meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-		<script src="datas.js"></script>
-		<script src="exo7.js"></script>
+<html lang="fr">
 
-    </head>
-    <body>
-		<div class="container-fluid">
-			<h1>Exercice 7</h1>
-			
-			<ul class="nav nav-tabs"  role="tablist">
-			  <li class="nav-item"><a class="nav-link active" id="table-tab-nav" data-toggle="tab"  role="tab"  href="#table-tab" aria-controls="table-tab" aria-selected="true">Table</a></li>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script src="datas.js"></script>
+
+
+</head>
+
+<body>
+	<div class="container-fluid">
+		<h1>Exercice 7-bonus</h1>
+
+		<form>
+			<div class="form-group">
+				<input type="search" class="form-control" id="searchInput" aria-describedby="emailHelp"
+					placeholder="Entrer votre recherche">
+				<br>
+				<p class="text-right"><button type="button" class="btn btn-primary" onclick="searching()">Submit</button></p>
+				<br>
+
+			</div>
+			<div class="custom-control custom-checkbox mb-4">
+				<input type="checkbox" onclick="searching()" class="custom-control-input" id="checkInput">
+				<label class="custom-control-label" for="checkInput">Afficher les articles en ruptue de stock</label>
+			</div>
+			<div class="dropdown mb-4">
+
+				<select class="form-controle" id="dropdown">
+					<option value='1' class="dropdown-item">Alphabétique croissant</option>
+					<option value='2' class="dropdown-item">Alphabétique décroissant</option>
+					<option value='3' class="dropdown-item">Prix croissant</option>
+					<option value='4' class="dropdown-item">Prix décroissant</option>
+				</select>
+			</div>
+
+			<ul class="nav nav-tabs" role="tablist">
+				<li class="nav-item"><a class="nav-link active" id="table-tab-nav" data-toggle="tab" role="tab"
+						href="#table-tab" aria-controls="table-tab" aria-selected="true">Table</a></li>
 			</ul>
 
-			<div class="tab-content">
+			<div class="tab-content mb-5">
 				<div id="table-tab" role="tabpanel" class="tab-pane fade show active" aria-labelledby="table-tab-nav">
-					<br/>
+					<br />
 					<table class="table table-striped">
 						<thead>
 							<tr>
 								<th>Nom</th>
 								<th>Description</th>
-								<th>Type</th>
 								<th>Prix</th>
 								<th>Quantité</th>
+								<th>Type</th>
+								<th>Nom</th>
+								<th>Prenom</th>
+								<th>Adresse</th>
 							</tr>
 						</thead>
 						<tbody>
-						</tbody>		
+						</tbody>
 					</table>
 				</div>
-				
 
-			</div>			
-		</div>
-		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-	</body>
+
+			</div>
+
+			<form>
+				<div class="form-group mb-4">
+					<label for="formGroupExampleInput">Nom</label>
+					<input type="text" class="form-control" id="addNameInput" placeholder="Nom">
+				</div>
+				<div>
+					<label for="formGroupExampleInput2">Type</label>
+					<input type="text" class="form-control" id="addTypeInput" placeholder="Type">
+				</div>
+				<div>
+					<label for="formGroupExampleInput">Description</label>
+					<input type="text" class="form-control" id="addDescriptionInput" placeholder="Description">
+				</div>
+				<div>
+					<label for="formGroupExampleInput2">Prix</label>
+					<input type="text" class="form-control" id="addPriceInput" placeholder="Prix">
+				</div>
+				<div>
+					<label for="formGroupExampleInput2">Quantité</label>
+					<input type="text" class="form-control mb-4" id="addQuantityInput" placeholder="Quantité">
+				</div>
+				<div class="form-group">
+					<label for="formGroupExampleInput">Votre Nom</label>
+					<input type="text" class="form-control" id="addLastNameInput" placeholder="Votre Nom">
+				</div>
+				<div>
+					<label for="formGroupExampleInput2">Votre prénom</label>
+					<input type="text" class="form-control" id="addFirstNameInput" placeholder="Votre prénom">
+				</div>
+				<div>
+					<label for="formGroupExampleInput">Adresse</label>
+					<input type="text" class="form-control mb-4" id="addAddressInput" placeholder="Adresse">
+				</div>
+				<div>
+					<button type="button" onclick="addObj()" class="btn btn-primary mb-4">Submit</button>
+			</form>
+
+
+
+	</div>
+	<script src="exo7.js"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+		crossorigin="anonymous"></script>
+</body>
+
 </html>
