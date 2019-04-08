@@ -75,7 +75,7 @@ function addObj() {
     newItem.contact = {};
 
     newItem.name = document.getElementById('addNameInput').value;              // =>  newItem.name = document.getElementById('addNameInput').value;
-    newItem.type = document.getElementById('addTypeInput').value;
+    //newItem = document.getElementById('addTypeInput').value;
     newItem.description = document.getElementById('addDescriptionInput').value;
     newItem.price = document.getElementById('addPriceInput').value;
     newItem.quantity = document.getElementById('addQuantityInput').value;
