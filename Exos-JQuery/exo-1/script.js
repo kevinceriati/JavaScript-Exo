@@ -12,6 +12,6 @@ $(document).ready(function(){
 
 /* Ici le jQuery fait : sur la page, utilise la fonction ready qui affiche simplement un texte dans la console.
 
-cette ligne n'est pas du tout indispensable puisque cette fonction ne sert à rien, le console.log seul donnerait le même résutlat.
+cette ligne est indispensable puisque grace à cela la fonction de s'exécute qu'une fois que la page et toutes ces dépendences sont déjà chargées.
 
 Le sympbole nous permettant de repérer le Javascript et le jQuery est le $   */
