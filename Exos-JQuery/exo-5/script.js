@@ -62,24 +62,7 @@ function determineWinner(userChoice, computerChoice) {
         resultat = 'lost';
         $('#winner').css('color', 'red');
     }
-    
+
     $('#winner').text('Résultat : ' + resultat);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 });
