@@ -9,7 +9,7 @@ $(document).ready(function () {
         var $mail = $('input').val();
         window.alert('Merci ' + $mail);
     });
-
+    
 
 
     $('.navbar-nav a:eq(1)').on('dblclick', function () {

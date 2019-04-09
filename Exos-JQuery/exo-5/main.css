@@ -1,0 +1,40 @@
+*{
+    margin  : 0;
+    padding : 0;
+    
+}
+
+.title {
+    font-size: 150%;
+    color: white;
+}
+
+body {
+    background: top left / cover url("image/Background.jpg") no-repeat;
+}
+
+img{
+    width: 300px;
+    height: 300px;
+
+}
+
+#userChoice {
+    font-weight: bold;
+    font-size: 40px;
+    color: white;
+}
+
+#computerChoice {
+    font-weight: bold;
+    font-size: 40px;
+    color: white;
+}
+
+#winner {
+    font-weight: bold;
+    font-size: 40px;
+}
+
+
+
