@@ -1,5 +1,5 @@
 console.log("exercice 7");
-
+var desc = false;
 $(document).ready(function () {
   $("#searchBar").on("keyup", function () {
     var value = $(this).val().toLowerCase();
@@ -66,51 +66,39 @@ $(document).ready(function () {
       $pager.insertBefore($table).find('span.page-number:first').addClass('active');
     });
   }
-
-  function sort() {
-
-    $("tbody").find('tr').sort(function (a, b) {
-      var a1 = $('td + td', a).text();
-      var b1 = $('td + td', b).text();
-      var result = a1.localeCompare(b1);
-      return result;
-    
+  
+function sort(colChoice) {
+  $("tbody").find('tr').sort(function (a, b) {
+      var a1 = $(colChoice, a).text();
+      var b1 = $(colChoice, b).text();
+          if (desc) {
+            var result = b1.localeCompare(a1);
+            return result;
+          } else {
+            var result = a1.localeCompare(b1);
+            return result;
+          }
         }).appendTo('tbody');
+       desc = !desc;
         paging();
-  }
-
-  function sortDescending() {
-
-    $("tbody").find('tr').sort(function (a, b) {
-      var a1 = $('td + td', a).text();
-      var b1 = $('td + td', b).text();
-      var result = b1.localeCompare(a1);
-      return result;
-    
-        }).appendTo('tbody');
-        paging();
-  }
-
-  $('a#alphaOrder').on('click', function () {
-    sort();
-  });
-  $('a#alphaOrderFirst').on('click', function () {
-    sortDescending();
-  });
-
-
+    }
+  $('#alphaOrder').on('click', function () {
+   colChoice = 'td:first + td'
+    sort(colChoice);
+  })
+  $('#alphaOrderFirst').on('click', function () {
+    colChoice = 'td:first + td + td'
+    sort(colChoice);
+  })
+  $('#alphaOrderMail').on('click', function () {
+    colChoice = 'td:first'
+    sort(colChoice);
+  })
+  $('#numericOrder').on('click', function () {
+    colChoice = 'td:first + td + td + td'
+     sort(colChoice);
+   })
 });
-
- 
-
-
-
-
-
-
-
-
-
 
 
 // function showData($page) {
