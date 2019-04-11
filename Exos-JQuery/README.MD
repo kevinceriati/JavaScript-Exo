@@ -135,7 +135,7 @@ Dans cet exercice, nous allons récupérer des données et les afficher dans not
 
 Dans le répertoire exo-7, vous trouverez un fichier DATA.js contenant un bien joli tableau avec 1000 éléments, il s'agit de données typiques d'un site contenant des informations sur des utilisateurs.
 
-Dans le fichier script.js, vous avez une fonction getData qui vous retourne le tableau de données, notre objectif va être d'afficher ces données dans une [table HTML](https://www.w3schools.com/bootstrap/bootstrap_tables.asp) :
+Dans le fichier script.js, vous avez une fonction getData qui vous retourne le tableau de données, notre objectif va être d'afficher ces données dans une [table HTML](https://wwwadd .w3schools.com/bootstrap/bootstrap_tables.asp) :
 
 1. créez un tableau HTML avec pour colonne email, nom, prénom, numéro de téléphone;
 2. créez une fonction addLineToTable qui prend en paramètre un objet et dont l'objectif est d'ajouter une ligne à notre tableau avec JQuery. La méthode [append](http://api.jquery.com/append/) de JQuery devrait vous aider;
