@@ -10,10 +10,6 @@ $(document).ready(function () {
   build();
   paging();
 
-  function getData() {
-    return data; // data is defined in DATA.js file
-  }
-
   function addLineToTable(objet) {
     var $row = $('<tr>');
     var $columnEmail = $('<td>');
@@ -32,7 +28,6 @@ $(document).ready(function () {
     $columnTel.appendTo($row);
     $row.appendTo('tbody');
   }
-
 
   function build() {
     data.forEach(function (objet) {
@@ -98,6 +93,22 @@ function sort(colChoice) {
     colChoice = 'td:first + td + td + td'
      sort(colChoice);
    })
+   $('#sub').on('click', function () {
+    addItem();
+   })
+   function addItem (){
+    var newItem = {};
+  
+    newItem.email = $('#emailInput').val();;
+    newItem.name = {}; 
+    newItem.name.last = $('#lastNameInput').val();
+    newItem.name.first = $('#firstNameInput').val();
+    newItem.phone = $('#phoneInput').val();
+    data.push(newItem);
+    $('tbody > tr').remove();
+    build();
+    paging();    
+  }
 });
 
 
