@@ -1,5 +1,10 @@
 console.log("exercice 7");
 var desc = false;
+
+
+
+
+
 $(document).ready(function () {
   $("#searchBar").on("keyup", function () {
     var value = $(this).val().toLowerCase();
@@ -16,16 +21,24 @@ $(document).ready(function () {
     var $columnLast = $('<td>');
     var $columnFirst = $('<td>');
     var $columnTel = $('<td>');
+    var $deleteButton = $('<td>');
 
     $columnEmail.text(objet.email);
     $columnFirst.text(objet.name.first);
     $columnLast.text(objet.name.last);
     $columnTel.text(objet.phone);
+    var currentButton = $deleteButton.append('<button>');
+    currentButton.attr({ 'type': "button" }).addClass("btn btn-primary").text('Supprimer');
+    currentButton.on('click', function () {
+      $(this).parent().remove();
+
+    });
 
     $columnEmail.appendTo($row);
     $columnLast.appendTo($row);
     $columnFirst.appendTo($row);
     $columnTel.appendTo($row);
+    $deleteButton.appendTo($row);
     $row.appendTo('tbody');
   }
 
@@ -33,6 +46,7 @@ $(document).ready(function () {
     data.forEach(function (objet) {
       addLineToTable(objet);
     });
+
   }
 
   function paging() {
@@ -61,24 +75,24 @@ $(document).ready(function () {
       $pager.insertBefore($table).find('span.page-number:first').addClass('active');
     });
   }
-  
-function sort(colChoice) {
-  $("tbody").find('tr').sort(function (a, b) {
+
+  function sort(colChoice) {
+    $("tbody").find('tr').sort(function (a, b) {
       var a1 = $(colChoice, a).text();
       var b1 = $(colChoice, b).text();
-          if (desc) {
-            var result = b1.localeCompare(a1);
-            return result;
-          } else {
-            var result = a1.localeCompare(b1);
-            return result;
-          }
-        }).appendTo('tbody');
-       desc = !desc;
-        paging();
-    }
+      if (desc) {
+        var result = b1.localeCompare(a1);
+        return result;
+      } else {
+        var result = a1.localeCompare(b1);
+        return result;
+      }
+    }).appendTo('tbody');
+    desc = !desc;
+    paging();
+  }
   $('#alphaOrder').on('click', function () {
-   colChoice = 'td:first + td'
+    colChoice = 'td:first + td'
     sort(colChoice);
   })
   $('#alphaOrderFirst').on('click', function () {
@@ -91,25 +105,35 @@ function sort(colChoice) {
   })
   $('#numericOrder').on('click', function () {
     colChoice = 'td:first + td + td + td'
-     sort(colChoice);
-   })
-   $('#sub').on('click', function () {
+    sort(colChoice);
+  })
+  $('#sub').on('click', function () {
     addItem();
-   })
-   function addItem (){
+  })
+
+  function addItem() {
     var newItem = {};
-  
+
     newItem.email = $('#emailInput').val();;
-    newItem.name = {}; 
+    newItem.name = {};
     newItem.name.last = $('#lastNameInput').val();
     newItem.name.first = $('#firstNameInput').val();
     newItem.phone = $('#phoneInput').val();
     data.push(newItem);
     $('tbody > tr').remove();
     build();
-    paging();    
+    paging();
   }
 });
+
+
+// $('button').data("action", "delete").on('click', function(){
+//   console.log($(this).text())
+// })
+
+
+
+
 
 
 // function showData($page) {
